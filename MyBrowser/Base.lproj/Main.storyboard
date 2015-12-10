@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjP-fN-TYt">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Chuck's Web Browser" id="jEp-gz-vzf"/>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" placeholder="Type in website" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-Pf-TaB">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ecI-oN-Wdg"/>
+                                </connections>
+                            </searchBar>
+                            <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-gP-lIo">
+                                <rect key="frame" x="-5" y="108" width="605" height="492"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="C0H-Yk-6Hs"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MEG-Pf-TaB" firstAttribute="top" secondItem="IjP-fN-TYt" secondAttribute="bottom" id="3qK-lR-UCt"/>
+                            <constraint firstItem="IGn-gP-lIo" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="6dp-wA-uAX"/>
+                            <constraint firstItem="MEG-Pf-TaB" firstAttribute="trailing" secondItem="IjP-fN-TYt" secondAttribute="trailing" id="GxM-gi-wk6"/>
+                            <constraint firstAttribute="trailing" secondItem="IjP-fN-TYt" secondAttribute="trailing" id="MsX-1B-u4e"/>
+                            <constraint firstItem="IGn-gP-lIo" firstAttribute="trailing" secondItem="MEG-Pf-TaB" secondAttribute="trailing" id="O5V-Eo-SdA"/>
+                            <constraint firstItem="IGn-gP-lIo" firstAttribute="top" secondItem="MEG-Pf-TaB" secondAttribute="bottom" id="Q9x-iX-Y7y"/>
+                            <constraint firstItem="IGn-gP-lIo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-25" id="beb-tq-EMf"/>
+                            <constraint firstItem="MEG-Pf-TaB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gM0-vj-31m"/>
+                            <constraint firstItem="MEG-Pf-TaB" firstAttribute="leading" secondItem="IjP-fN-TYt" secondAttribute="leading" id="tTX-Pa-ETB"/>
+                            <constraint firstItem="IjP-fN-TYt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="z6L-fx-JRG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="SearchBar" destination="MEG-Pf-TaB" id="Uht-NP-1tc"/>
+                        <outlet property="searchDisplayController" destination="tTr-xN-e6Z" id="D1N-dC-3wB"/>
+                        <outlet property="webview" destination="IGn-gP-lIo" id="yNm-2Z-uvG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="tTr-xN-e6Z">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="7vi-FQ-jF3"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="suH-NS-n6W"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="eYn-16-7uN"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="jsB-re-OLi"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+        </scene>
+    </scenes>
+</document>
